@@ -1,0 +1,47 @@
+
+{%include 'partials/header.html' %}
+<br>
+<div style="margin-left:20%">
+  {% for api in APIdashboard %}
+  <div class="col-md-8" style="padding-bottom:20px;padding-left:10px;padding-right:10px;">
+    <div class="container-fluid card" style="padding:15px 5px;border-radius:25px 25px 0px">
+
+
+      <div class="row">
+        <div class="col-md-12" style="padding-right:5px">
+          <div class="col-md-6">
+            <strong>API Name: <a href="/apidashboard/details/{{api.id}}">{{api.name}}</a></strong>
+          </div>
+        </div>
+      <br>
+        <div class="col-md-12" style="padding-right:5px">
+          <div class="col-md-6">
+            <strong>API Link:</strong> {{api.link}}
+          </div>
+        </div>
+        <br>
+        <div class="col-md-12" style="padding-right:5px">
+          <div class="col-md-6">
+            <strong>API Request</strong> {{api.requesting}}
+          </div>
+        </div>
+        </div>
+      <div class="row" style="position:absolute;bottom:17px;right:2px">
+        <div class="col-md-12">
+          <div class="btn-group btn-sm pull-right">
+
+            <a href="{% url 'edit' api.pk %}">
+              <button type="button"   class="btn btn-primary btn-sm">Edit</button>
+              <a href="{% url 'delete' api.pk %}"> &nbsp;&nbsp;
+                <button type="button" class="btn btn-default btn-sm">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  {% endfor %}
+
+
+{%include 'partials/footer.html' %}
