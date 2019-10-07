@@ -3,8 +3,8 @@
 <br>
 <div style="margin-left:20%">
   {% for api in APIdashboard %}
-  <div class="col-md-8" style="padding-bottom:20px;padding-left:10px;padding-right:10px;">
-    <div class="container-fluid card" style="padding:15px 5px;border-radius:25px 25px 10px">
+  <div class="col-md-8" style="padding-bottom:20px;padding-left:10px;padding-right:10px; ">
+    <div class="container-fluid card" style="padding:15px 5px;border-radius:25px 25px 10px;background-color:#ffedcc;">
 
 
       <div class="row">
@@ -30,9 +30,9 @@
         <div class="col-md-12">
           <div class="btn-group btn-sm pull-right">
 
-            <a href="{% url 'edit' api.pk %}">
-              <button type="button"   class="btn btn-primary btn-sm">Edit</button>
-              <a href="{% url 'delete' api.pk %}"> &nbsp;&nbsp;
+            <a href="/apidashboard/details/{{api.id}}">
+              <button type="button"   class="btn btn-primary btn-sm">Details</button>
+               &nbsp;&nbsp;<a href="{% url 'delete' api.pk %}">
                 <button type="button" class="btn btn-default btn-sm">Delete</button>
           </div>
         </div>
